@@ -1,0 +1,10 @@
+const { Router } = require('express')
+const DrinkController = require('../controller/drinks.controller')
+const router = Router()
+router.get('/drinks', DrinkController.getAllDrinks)
+router.get('/drinks/in_stocks/:id', DrinkController.getStockDrinks)
+router.get('/drinks/:DrinkId', DrinkController.getDrinkInfo)
+router.post('/drinks', DrinkController.addNewDrink)
+router.delete('/drinks/:id', DrinkController.deleteDrink)
+router.patch('/drinks/:id', DrinkController.changeDrink)
+module.exports = router
